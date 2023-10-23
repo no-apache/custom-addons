@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- actions opening views on models -->
+
+    <record id="legislativa_action_window" model="ir.actions.act_window">
+      <field name="name">Grupos Parlamentarios</field>
+      <field name="res_model">legislativa.grupos_parlamentarios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="diputados_action_window" model="ir.actions.act_window">
+      <field name="name">Diputados y Diputadas</field>
+      <field name="res_model">legislativa.diputados</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="iniciativas_action_window" model="ir.actions.act_window">
+      <field name="name">Iniciativas</field>
+      <field name="res_model">legislativa.iniciativas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="instituciones_action_window" model="ir.actions.act_window">
+      <field name="name">Instituciones</field>
+      <field name="res_model">legislativa.instituciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+    <menuitem name="Legislativa" id="legislativa.menu_root" web_icon="legislativa,static/description/icon.png" />
+
+    <!-- menu categories -->
+    <menuitem name="Iniciativas" id="legislativa.iniciativas" parent="legislativa.menu_root" action="iniciativas_action_window" />
+    <menuitem name="Instituciones" id="legislativa.insituciones" parent="legislativa.menu_root" action="instituciones_action_window" />
+    <menuitem name="Grupos Parlamentarios" id="legislativa.gp" parent="legislativa.menu_root" />
+
+    <!-- actions -->
+    <menuitem name="Lista Grupos Parlamentarios" id="legislativa.menu_gp_list" parent="legislativa.gp" action="legislativa_action_window" />
+    <menuitem name="Lista de Diputados y Diputadas" id="legislativa.menu_dp_list" parent="legislativa.gp" action="diputados_action_window" />
+
+  </data>
+</odoo>

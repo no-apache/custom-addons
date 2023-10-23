@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="grupo_parlamentario_list">
+      <field name="name">grupo_parlamentario list</field>
+      <field name="model">legislativa.grupos_parlamentarios</field>
+      <field name="arch" type="xml">
+        <tree string="Grupos Parlamentarios">
+          <field name="name" modifiers="{&quot;required&quot;: true}" />
+          <field name="iniciales" />
+          <field name="numero_diputados" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="grupo_parlamentario_form">
+      <field name="name">grupo_parlamentario form</field>
+      <field name="model">legislativa.grupos_parlamentarios</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet string="Grupos Parlamentarios">
+            <group>
+              <group>
+                <field name="name" modifiers="{&quot;required&quot;: true}" />
+                <field name="nombre_corto" />
+              </group>
+              <group>
+                <field name="iniciales" />
+                <field name="numero_diputados" />
+              </group>
+            </group>
+            <group>
+              <separator />
+            </group>
+            <notebook>
+              <page string="Diputados y Diputadas">
+                <tree>
+                  <field name="diputados_ids" nolabel="1" widget="one2many_list">
+                    <tree string="legislativa.diputados">
+                      <field name="name" modifiers="{&quot;required&quot;: true}"/>
+                      <field name="circunscripcion" optional="show"/>
+                    </tree>
+                  </field>
+                </tree>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

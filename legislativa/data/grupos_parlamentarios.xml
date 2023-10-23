@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="grupo_parlamentario_1" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Popular en el Congreso</field>
+            <field name="iniciales">PP</field>
+            <field name="nombre_corto">GP</field>
+        </record>
+        <record id="grupo_parlamentario_2" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Socialista</field>
+            <field name="iniciales">PSOE</field>
+            <field name="nombre_corto">GS</field>
+        </record>
+        <record id="grupo_parlamentario_3" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario VOX</field>
+            <field name="iniciales">VOX</field>
+            <field name="nombre_corto">GVOX</field>
+        </record>
+        <record id="grupo_parlamentario_4" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Plurinacional SUMAR</field>
+            <field name="iniciales">SUMAR</field>
+            <field name="nombre_corto">GSUMAR</field>
+        </record>
+        <record id="grupo_parlamentario_5" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Republicano</field>
+            <field name="iniciales">ERC</field>
+            <field name="nombre_corto">GR</field>
+        </record>
+        <record id="grupo_parlamentario_6" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Junts per Catalunya</field>
+            <field name="iniciales">JxCAT</field>
+            <field name="nombre_corto">GJxCAT</field>
+        </record>
+        <record id="grupo_parlamentario_7" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Euskal Herria Bildu</field>
+            <field name="iniciales">EH BILDU</field>
+            <field name="nombre_corto">GEH BILDU</field>
+        </record>
+        <record id="grupo_parlamentario_8" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Vasco (EAJ-PNV)</field>
+            <field name="iniciales">EAJ-PNV</field>
+            <field name="nombre_corto">GV (EAJ-PNV)</field>
+        </record>
+        <record id="grupo_parlamentario_9" model="legislativa.grupos_parlamentarios">
+            <field name="name">Grupo Parlamentario Mixto</field>
+            <field name="iniciales">UPN</field>
+            <field name="nombre_corto">GMx</field>
+        </record>
+    </data>
+</odoo>

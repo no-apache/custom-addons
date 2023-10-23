@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_legislativa_grupos_parlamentarios,legislativa.grupos.parlamentarios,legislativa.model_legislativa_grupos_parlamentarios,base.group_user,1,1,1,1
+access_legislativa_diputados,legislativa.diputados,legislativa.model_legislativa_diputados,base.group_user,1,1,1,1
+access_legislativa_iniciativas,legislativa.iniciativas,legislativa.model_legislativa_iniciativas,base.group_user,1,1,1,1
+access_legislativa_instituciones,legislativa.instituciones,legislativa.model_legislativa_instituciones,base.group_user,1,1,1,1

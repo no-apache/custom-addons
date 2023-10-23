@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="0">
+    <data>
+        <record id="legislativa_diputados" model="ir.cron">
+            <field name="name">Legislativa: Obtener Lista de Diputados</field>
+            <field name="model_id" ref="legislativa.model_legislativa_diputados" />
+            <field name="state">code</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="False"/>
+            <field name="code">
+json_file_path = '/opt/odoo/16.0/odoo/custom/legislativa/data/DiputadosActivos__20231022050027.json'
+model.import_data_from_json(json_file_path)</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(minutes=30))" />
+        </record>
+
+        <record id="legislativa_iniciativas" model="ir.cron">
+            <field name="name">Legislativa: Obtener Lista de Iniciativas</field>
+            <field name="model_id" ref="legislativa.model_legislativa_iniciativas" />
+            <field name="state">code</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="False"/>
+            <field name="code">
+file_path = '/opt/odoo/16.0/odoo/custom/legislativa/data/ProposicionesDeLey__20231021050124.json'
+model.import_data_from_json(file_path)</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(minutes=30))" />
+        </record>
+    </data>
+</odoo>

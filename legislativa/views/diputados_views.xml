@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="diputados_list">
+      <field name="name">diputados list</field>
+      <field name="model">legislativa.diputados</field>
+      <field name="arch" type="xml">
+        <tree string="Lista de Diputados y Diputadas">
+          <field name="name" modifiers="{&quot;required&quot;: true}"/>
+          <field name="circunscripcion" optional="show"/>
+          <field name="grupo_parlamentario_id" optional="show"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="diputados_form">
+      <field name="name">diputados form</field>
+      <field name="model">legislativa.diputados</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet string="Formulario de Diputados y Diputadas">
+            <group>
+              <group>
+                <field name="name" modifiers="{&quot;required&quot;: true}"/>
+                <field name="edad"/>
+                <field name="circunscripcion"/>
+              </group>
+              <group>
+                <field name="imagen" options="{&quot;size&quot;:[0,90]}" widget="image"/>
+                <field name="genero"/>
+                <field name="grupo_parlamentario_id" can_create="true" can_write="true"/>
+              </group>
+            </group>
+            <group>
+              <separator/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

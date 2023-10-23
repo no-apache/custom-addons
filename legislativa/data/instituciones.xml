@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="institucion_1" model="legislativa.instituciones">
+            <field name="name">Casa de Su Majestad El Rey</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_2" model="legislativa.instituciones">
+            <field name="name">Congreso de los Diputados</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_3" model="legislativa.instituciones">
+            <field name="name">Senado</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_4" model="legislativa.instituciones">
+            <field name="name">Tribunal Constitucional</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_5" model="legislativa.instituciones">
+            <field name="name">Poder Judicial</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_6" model="legislativa.instituciones">
+            <field name="name">Consejo de Estado</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_7" model="legislativa.instituciones">
+            <field name="name">Defensor del Pueblo</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_8" model="legislativa.instituciones">
+            <field name="name">Tribunal de Cuentas</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_9" model="legislativa.instituciones">
+            <field name="name">Banco de España</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_10" model="legislativa.instituciones">
+            <field name="name">Consejo Económico y Social</field>
+            <field name="tipo">1</field>
+        </record>
+        <record id="institucion_11" model="legislativa.instituciones">
+            <field name="name">Otros organismos</field>
+            <field name="tipo">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="instituciones_list">
+      <field name="name">instituciones list</field>
+      <field name="model">legislativa.instituciones</field>
+      <field name="arch" type="xml">
+        <tree string="Instituciones">
+          <field name="name" modifiers="{&quot;required&quot;: true}"/>
+          <field name="tipo" optional="show" modifiers="{&quot;required&quot;: true}"/>
+          <field name="comunidad_autonoma" optional="show"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="instituciones_form">
+      <field name="name">instituciones form</field>
+      <field name="model">legislativa.instituciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet string="Instituciones">
+            <group>
+              <group>
+                <field name="name" modifiers="{&quot;required&quot;: true}"/>
+                <field name="comunidad_autonoma"/>
+              </group>
+              <group>
+                <field name="tipo" modifiers="{&quot;required&quot;: true}"/>
+              </group>
+            </group>
+            <group>
+              <separator/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>
