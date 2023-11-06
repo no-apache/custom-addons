@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="entidad_persona_list">
+    <field name="name">entidad_persona list</field>
+    <field name="model">legislativa.entidad_persona</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="es_entidad" />
+        <field name="name" required="1" />
+        <field name="nombre" />
+        <field name="escanios" />
+        <field name="porcentaje"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="entidad_persona_form">
+    <field name="name">entidad_persona form</field>
+    <field name="model">legislativa.entidad_persona</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet string="Entidades - Personas">
+          <group>
+            <group>
+              <field name="name" required="1" />
+              <field name="nombre" />
+              <field name="genero" />
+            </group>
+            <group>
+              <field name="actor_id" />
+              <field name="escanios" />
+              <field name="porcentaje" widget="percentage"/>
+            </group>
+          </group>
+          <group>
+            <separator />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

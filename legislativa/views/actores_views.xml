@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="actores_list">
+    <field name="name">actores list</field>
+    <field name="model">legislativa.actores</field>
+    <field name="arch" type="xml">
+      <tree string="Actores">
+        <field name="name" required="1"/>
+        <field name="tipo" required="1" optional="show"/>
+        <field name="es_legislativa" optional="show"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="actores_form">
+    <field name="name">actores form</field>
+    <field name="model">legislativa.actores</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet string="Actores">
+          <group>
+            <group>
+              <field name="name" required="1"/>
+              <field name="tipo" required="1"/>
+            </group>
+            <group>
+              <field name="es_legislativa" widget="boolean_toggle"/>
+              <field name="legislatura" attrs="{'required': [('es_legislativa', '=', True)], 'invisible': [('es_legislativa', '=', False)]}"/>
+            </group>
+          </group>
+          <group>
+            <separator/>
+          </group>
+          <notebook>
+            <page string="Entidad - Persona">
+              <field name="entidad_persona_ids">
+                <tree string="Entidad - Persona" editable="bottom">
+                  <field name="name" string="Nombre" attrs="{'column_invisible':[('parent.es_legislativa', '=', True)]}"/>
+                  <field name="name" string="Iniciales" attrs="{'column_invisible':[('parent.es_legislativa', '=', False)]}"/>
+                  <field name="display_type" invisible="1"/>
+                  <field name="nombre" attrs="{'required': [('parent.es_legislativa', '=', True)], 'column_invisible': [('parent.es_legislativa', '=', False)]}"/>
+                  <field name="escanios" attrs="{'column_invisible': [('parent.es_legislativa', '=', False)]}"/>
+                  <field name="porcentaje" widget="percentage" attrs="{'column_invisible': [('parent.es_legislativa', '=', False)]}"/>
+                  <field name="es_entidad" widget="boolean_toggle" attrs="{'column_invisible': [('parent.es_legislativa', '=', True)]}"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

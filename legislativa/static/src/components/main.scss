@@ -1,0 +1,77 @@
+// Pin icon on table header
+.display-on-hover {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -10px;
+  right: 24px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  z-index: 10;
+  margin-right: 1px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    display: block;
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+.o_list_view thead > tr > th {
+  &:hover {
+    .display-on-hover {
+      display: block;
+    }
+  }
+}
+
+// Common css
+.o_content {
+  .table-responsive {
+    overflow: visible;
+    thead th {
+      position: sticky !important;
+      top: 0;
+      background-color: #eee;
+      z-index: 1;
+    }
+
+    tr.o_data_row {
+      position: relative;
+
+      td {
+        white-space: nowrap;
+        padding: 0.3rem 0.75rem;
+      }
+
+      &:hover td {
+        background-color: #eee !important;
+      }
+
+      &:focus-within td {
+        background-color: #ccc !important;
+      }
+    }
+  }
+}
+
+// Animation from account module
+@keyframes animate-red {
+  0% {
+    color: red;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+.animate {
+  animation: animate-red 1s ease;
+}

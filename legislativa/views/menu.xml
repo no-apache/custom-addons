@@ -1,45 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <data>
-    <!-- actions opening views on models -->
+  <!-- actions opening views on models -->
 
-    <record id="legislativa_action_window" model="ir.actions.act_window">
-      <field name="name">Grupos Parlamentarios</field>
-      <field name="res_model">legislativa.grupos_parlamentarios</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+  <record id="instituciones_action_window" model="ir.actions.act_window">
+    <field name="name">Actores</field>
+    <field name="res_model">legislativa.actores</field>
+    <field name="view_mode">tree,form</field>
+  </record>
 
-    <record id="diputados_action_window" model="ir.actions.act_window">
-      <field name="name">Diputados y Diputadas</field>
-      <field name="res_model">legislativa.diputados</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+  <!-- <record id="mapas_action_window" model="ir.actions.act_window">
+    <field name="name">Mapas</field>
+    <field name="res_model">legislativa.mapas</field>
+    <field name="view_mode">tree,form</field>
+  </record> -->
 
-    <record id="iniciativas_action_window" model="ir.actions.act_window">
-      <field name="name">Iniciativas</field>
-      <field name="res_model">legislativa.iniciativas</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+  <record id="mapa_act_ali_action_window" model="ir.actions.act_window">
+    <field name="name">Mapa de Actores y Alianzas</field>
+    <field name="res_model">legislativa.tipos_mapas</field>
+    <field name="view_id" ref="mapa_actores_alianzas_list" />
+    <field name="domain">[('tipo_mapas_id', '=', 1)]</field>
+    <field name="context">{'default_tipo_mapas_id': 1}</field>
+    <field name="view_mode">tree</field>
+  </record>
 
-    <record id="instituciones_action_window" model="ir.actions.act_window">
-      <field name="name">Instituciones</field>
-      <field name="res_model">legislativa.instituciones</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+  <record id="mapa_pet_act_action_window" model="ir.actions.act_window">
+    <field name="name">Mapa de peticiones de Actores</field>
+    <field name="res_model">legislativa.tipos_mapas</field>
+    <field name="view_id" ref="mapa_peticiones_actores_list" />
+    <field name="domain">[('tipo_mapas_id', '=', 2)]</field>
+    <field name="context">{'default_tipo_mapas_id': 2}</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="mapa_acc_ali_action_window" model="ir.actions.act_window">
+    <field name="name">Mapa de Acciones de Alianzas</field>
+    <field name="res_model">legislativa.tipos_mapas</field>
+    <field name="view_id" ref="mapa_acciones_alianzas_list" />
+    <field name="domain">[('tipo_mapas_id', '=', 3)]</field>
+    <field name="context">{'default_tipo_mapas_id': 3}</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="mapa_comunic_action_window" model="ir.actions.act_window">
+    <field name="name">Mapa de Comunicación</field>
+    <field name="res_model">legislativa.tipos_mapas</field>
+    <field name="view_id" ref="mapa_comunicacion_list" />
+    <field name="domain">[('tipo_mapas_id', '=', 4)]</field>
+    <field name="context">{'default_tipo_mapas_id': 4}</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="mapa_inf_dig_action_window" model="ir.actions.act_window">
+    <field name="name">Mapa de Influencia Digital</field>
+    <field name="res_model">legislativa.tipos_mapas</field>
+    <field name="view_id" ref="mapa_infl_digi_list" />
+    <field name="domain">[('tipo_mapas_id', '=', 5)]</field>
+    <field name="context">{'default_tipo_mapas_id': 5}</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="areas_action_window" model="ir.actions.act_window">
+    <field name="name">Áreas</field>
+    <field name="res_model">legislativa.areas</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="modelo_outputs_action_window" model="ir.actions.act_window">
+    <field name="name">Desempeño (Outputs)</field>
+    <field name="res_model">legislativa.desempeno_resultado</field>
+    <field name="view_id" ref="legislativa_desempeno_list" />
+    <field name="domain">[('area_id.aapp_name','=','outputs')]</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <record id="modelo_outcomes_action_window" model="ir.actions.act_window">
+    <field name="name">Resultado (Outcomes)</field>
+    <field name="res_model">legislativa.desempeno_resultado</field>
+    <field name="view_id" ref="legislativa_resultado_list" />
+    <field name="domain">[('area_id.aapp_name','=','outcomes')]</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <!-- <record id="iniciativas_action_window" model="ir.actions.act_window">
+    <field name="name">Iniciativas</field>
+    <field name="res_model">legislativa.iniciativas</field>
+    <field name="view_mode">tree,form</field>
+  </record> -->
+
+  <!-- <record id="entidad_persona_action_window" model="ir.actions.act_window">
+    <field name="name">Entidad - Persona</field>
+    <field name="res_model">legislativa.entidad_persona</field>
+    <field name="view_mode">tree,form</field>
+  </record> -->
 
 
 
-    <!-- Top menu item -->
-    <menuitem name="Legislativa" id="legislativa.menu_root" web_icon="legislativa,static/description/icon.png" />
+  <!-- Top menu item -->
+  <menuitem name="Legislativa" id="legislativa.menu_root" web_icon="legislativa,static/description/icon.png" />
 
-    <!-- menu categories -->
-    <menuitem name="Iniciativas" id="legislativa.iniciativas" parent="legislativa.menu_root" action="iniciativas_action_window" />
-    <menuitem name="Instituciones" id="legislativa.insituciones" parent="legislativa.menu_root" action="instituciones_action_window" />
-    <menuitem name="Grupos Parlamentarios" id="legislativa.gp" parent="legislativa.menu_root" />
+  <!-- menu categories -->
+  <menuitem name="Actores" id="legislativa.actores" parent="legislativa.menu_root" action="instituciones_action_window" />
+  <menuitem name="Mapas" id="legislativa.mapas" parent="legislativa.menu_root" />
+  <menuitem name="Mapa de Actores y Alianzas" id="legislativa.mapa_act_ali" parent="legislativa.mapas" action="mapa_act_ali_action_window" />
+  <menuitem name="Mapa de Peticiones de Actores" id="legislativa.mapa_pet_act" parent="legislativa.mapas" action="mapa_pet_act_action_window" />
+  <menuitem name="Mapa de Acciones de Alianzas" id="legislativa.mapa_acc_ali" parent="legislativa.mapas" action="mapa_acc_ali_action_window" />
+  <menuitem name="Mapa de Comunicación" id="legislativa.mapa_comun" parent="legislativa.mapas" action="mapa_comunic_action_window" />
+  <menuitem name="Mapa de Influencia Digital" id="legislativa.mapa_inf_dig" parent="legislativa.mapas" action="mapa_inf_dig_action_window" />
+  <menuitem name="Áreas " id="legislativa.areas" parent="legislativa.menu_root" action="areas_action_window" />
+  <menuitem name="Modelos AAPP" id="legislativa.modelos" parent="legislativa.menu_root" />
+  <menuitem name="Desempeño (Outputs)" id="legislativa.modelos_outputs" parent="legislativa.modelos" action="modelo_outputs_action_window"/>
+  <menuitem name="Resultado (Outcomes)" id="legislativa.modelos_outcomes" parent="legislativa.modelos" action="modelo_outcomes_action_window"/>
 
-    <!-- actions -->
-    <menuitem name="Lista Grupos Parlamentarios" id="legislativa.menu_gp_list" parent="legislativa.gp" action="legislativa_action_window" />
-    <menuitem name="Lista de Diputados y Diputadas" id="legislativa.menu_dp_list" parent="legislativa.gp" action="diputados_action_window" />
+  <!-- <menuitem name="Mapas" id="legislativa.mapas" parent="legislativa.menu_root" /> -->
+  <!-- <menuitem name="Iniciativas" id="legislativa.iniciativas" parent="legislativa.menu_root" action="iniciativas_action_window" /> -->
+  <!-- <menuitem name="Entidades - Personas" id="legislativa.ep" parent="legislativa.menu_root" /> -->
 
-  </data>
+  <!-- actions -->
+  <!-- <menuitem name="Lista Entidad - Personas" id="legislativa.menu_ep" parent="legislativa.ep" action="entidad_persona_action_window" /> -->
+  <!-- <menuitem name="Lista de Diputados y Diputadas" id="legislativa.menu_dp_list" parent="legislativa.gp" action="diputados_action_window" /> -->
+
 </odoo>

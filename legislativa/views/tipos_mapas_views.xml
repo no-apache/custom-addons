@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="tipos_mapas_list">
+    <field name="name">tipos_mapas list</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Lista de Tablas de Mapas" editable="bottom">
+        <field name="name" invisible="1"/>
+        <field name="actor_id" required="1" />
+        <field name="entidad_id" domain="[('actor_id', '=', actor_id),('es_entidad', '=', True)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="persona_id" domain="[('actor_id', '=', actor_id),('es_entidad', '=', False)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="escanios" />
+        <field name="porcentaje" />
+        <field name="relevancia"/>
+        <field name="alineamiento"/>
+        <field name="activable"/>
+        <field name="ponderacion_rel"/>
+        <field name="ponderacion_inst"/>
+        <field name="ponderacion_fin"/>
+        <field name="planificados_actores"/>
+        <field name="realizados_actores"/>
+        <field name="alineados_actores"/>
+        <field name="planificados_aliados"/>
+        <field name="realizados_aliados"/>
+        <field name="alineados_aliados"/>
+        <field name="planificados_alianzas"/>
+        <field name="realizados_alianzas"/>
+        <field name="alineados_alianzas"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="tipos_mapas_form">
+    <field name="name">tipos_mapas form</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet string="Formulario de Mapas">
+          <group>
+            <group>
+              <field name="name" />
+              <field name="actor_id" required="1" />
+              <field name="entidad_id" domain="[('actor_id', '=', actor_id),('es_entidad', '=', True)]" />
+            </group>
+            <group>
+              <field name="persona_id" domain="[('actor_id', '=', actor_id),('es_entidad', '=', False)]" />
+              <field name="escanios" />
+              <field name="porcentaje" />
+            </group>
+          </group>
+          <group>
+            <separator/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

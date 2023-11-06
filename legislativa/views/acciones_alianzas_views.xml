@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="mapa_acciones_alianzas_list">
+    <field name="name">mapa_acciones_alianzas list</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Mapa de Acciones de Alianzas" editable="bottom">
+        <field name="actor_id" string="Alianzas" width="250px" required="1" />
+        <field name="peticiones" width="200px" />
+        <field name="percent" width="125px" widget="percentage" />
+        <field name="relevancia" width="150px"/>
+        <field name="alineamiento" width="150px"/>
+        <field name="activable" width="125px"/>
+        <field name="ponderacion_rel" width="150px"/>
+        <field name="ponderacion_inst" width="200px"/>
+        <field name="ponderacion_fin" width="150px"/>
+        <!-- KPI Mapa de Acciones de Alianzas -->
+        <field name="plan_mencion_marca" width="125px" />
+        <field name="real_mencion_marca" width="125px" />
+        <field name="acep_mencion_marca" width="125px" />
+        <field name="plan_posic_marca" width="125px" />
+        <field name="real_posic_marca" width="125px" />
+        <field name="acep_posic_marca" width="125px" />
+        <field name="plan_part_alianza" width="125px" />
+        <field name="real_part_alianza" width="125px" />
+        <field name="acep_part_alianza" width="125px" />
+        <field name="plan_part_posi" width="125px" />
+        <field name="real_part_posi" width="125px" />
+        <field name="acep_part_posi" width="125px" />
+        <field name="plan_aliados_posic" width="125px" />
+        <field name="real_aliados_posic" width="125px" />
+        <field name="acep_aliados_posic" width="125px" />
+        <field name="plan_impul_posic" width="125px" />
+        <field name="real_impul_posic" width="125px" />
+        <field name="acep_impul_posic" width="125px" />
+        <field name="plan_impul_acciones" width="125px" />
+        <field name="real_impul_acciones" width="125px" />
+        <field name="acep_impul_acciones" width="125px" />
+        <field name="plan_decisor_acciones" width="125px" />
+        <field name="real_decisor_acciones" width="125px" />
+        <field name="acep_decisor_acciones" width="125px" />
+        <!-- Campo name para secciones y notas -->
+        <field name="name" width="250px" />
+      </tree>
+    </field>
+  </record>
+
+</odoo>

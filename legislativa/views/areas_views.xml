@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="legislativa_areas_tree_view">
+        <field name="name">legislativa.areas.tree</field>
+        <field name="model">legislativa.areas</field>
+        <field name="arch" type="xml">
+            <tree string="Áreas">
+                <field name="aapp_name" string="Modelo"/>
+                <field name="area_name" string="Plan"/>
+                <field name="descripcion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="legislativa_areas_form_view">
+        <field name="name">legislativa.areas.form</field>
+        <field name="model">legislativa.areas</field>
+        <field name="arch" type="xml">
+            <form string="Áreas">
+                <sheet>
+                    <group>
+                        <field name="aapp_name"/>
+                        <field name="area_name"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Sub-Áreas">
+                            <field name="sub_areas_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="dimension_ids">
+                                        <tree>
+                                            <field name="name"/>
+                                        </tree>
+                                    </field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

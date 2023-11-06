@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="mapa_comunicacion_list">
+    <field name="name">mapa_comunicacion list</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Mapa de Comunicación" editable="bottom">
+        <field name="actor_id" width="250px" required="1" />
+        <field name="entidad_id" width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', True)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="persona_id" width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', False)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="relevancia" width="150px"/>
+        <field name="alineamiento" width="150px"/>
+        <field name="activable" width="125px"/>
+        <field name="ponderacion_rel" width="150px"/>
+        <field name="ponderacion_inst" width="200px"/>
+        <field name="ponderacion_fin" width="150px"/>
+        <!-- KPI Mapa de Comunicación -->
+        <field name="plan_plan_relacional" width="125px" />
+        <field name="real_plan_relacional" width="125px" />
+        <field name="alin_plan_relacional" width="125px" />
+        <field name="plan_plan_comunic" width="125px" />
+        <field name="real_plan_comunic" width="125px" />
+        <field name="alin_plan_comunic" width="125px" />
+        <field name="plan_comunic_pm" width="125px" />
+        <field name="real_comunic_pm" width="125px" />
+        <field name="alin_comunic_pm" width="125px" />
+        <!-- Campo name para secciones y notas -->
+        <field name="name" width="250px" />
+      </tree>
+    </field>
+  </record>
+
+</odoo>

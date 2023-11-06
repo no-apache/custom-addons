@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="mapas_list">
+    <field name="name">mapas list</field>
+    <field name="model">legislativa.mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Mapas">
+        <field name="name" invisible="1"/>
+        <field name="mapa_name"/>
+        <field name="descripcion" optional="show"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="mapas_form">
+    <field name="name">mapas form</field>
+    <field name="model">legislativa.mapas</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <group>
+            <field name="name" invisible="1"/>
+            <field name="mapa_name" widget="radio" attrs="{'readonly': [('id', '!=', False)]}"/>
+          </group>
+          <group>
+            <field name="descripcion" />
+          </group>
+        </group>
+        <notebook>
+          <page string="Mapas">
+            <field name="mapas_ids" widget="section_and_note_one2many" mode="tree">
+              <tree editable="bottom">
+                <control>
+                  <create name="add_line_control" string="Agregar registro"/>
+                  <create name="add_section_control" string="Agregar una sección" context="{'default_display_type': 'line_section'}"/>
+                  <create name="add_note_control" string="Agregar una nota" context="{'default_display_type': 'line_note'}"/>
+                </control>
+                <!-- Campos base -->
+                <field name="display_type" invisible="1"/>
+                <field name="actor_id" x_width="250px" attrs="{'required': [('display_type', 'not in', ('line_note', 'line_section'))]}" />
+                <field name="entidad_id" x_width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', True)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" attrs="{'column_invisible': [('parent.mapa_name', 'not in', ('mdaa', 'mdco', 'mdid'))]}"/>
+                <field name="persona_id" x_width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', False)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" attrs="{'column_invisible': [('parent.mapa_name', 'not in', ('mdaa', 'mdco', 'mdid'))]}"/>
+                <field name="escanios" x_width="100px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="porcentaje" x_width="125px" widget="percentage" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="peticiones" x_width="200px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mpda')]}"/>
+                <field name="percent" x_width="125px" widget="percentage" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mpda')]}"/>
+                <field name="relevancia" x_width="150px"/>
+                <field name="alineamiento" x_width="150px"/>
+                <field name="activable" x_width="125px"/>
+                <field name="ponderacion_rel" x_width="150px"/>
+                <field name="ponderacion_inst" x_width="200px"/>
+                <field name="ponderacion_fin" x_width="150px"/>
+                <!-- KPI Mapa de Actores y Alianzas -->
+                <field name="planificados_actores" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="realizados_actores" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="alineados_actores" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="planificados_aliados" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="realizados_aliados" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="alineados_aliados" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="planificados_alianzas" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="realizados_alianzas" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <field name="alineados_alianzas" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdaa')]}"/>
+                <!-- KPI Mapa de Peticiones de Actores  -->
+                <field name="planificados_peticiones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mpda')]}"/>
+                <field name="realizados_peticiones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mpda')]}"/>
+                <field name="aceptadas_peticiones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mpda')]}"/>
+                <!-- KPI Mapa de Acciones de Alianzas -->
+                <field name="plan_mencion_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_mencion_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_mencion_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_posic_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_posic_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_posic_marca" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_part_alianza" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_part_alianza" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_part_alianza" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_part_posi" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_part_posi" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_part_posi" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_aliados_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_aliados_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_aliados_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_impul_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_impul_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_impul_posic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_impul_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_impul_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_impul_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="plan_decisor_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="real_decisor_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <field name="acep_decisor_acciones" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mada')]}"/>
+                <!-- KPI Mapa de Comunicación -->
+                <field name="plan_plan_relacional" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="real_plan_relacional" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="alin_plan_relacional" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="plan_plan_comunic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="real_plan_comunic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="alin_plan_comunic" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="plan_comunic_pm" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="real_comunic_pm" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <field name="alin_comunic_pm" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdco')]}"/>
+                <!-- KPI Mapa de Influencia Digital -->
+                <field name="plan_plan_influencers" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="real_plan_influencers" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="alin_plan_influencers" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="plan_plan_medon" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="real_plan_medon" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="alin_plan_medon" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="plan_comunic_imo" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="real_comunic_imo" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <field name="alin_comunic_imo" x_width="125px" attrs="{'column_invisible': [('parent.mapa_name', '!=', 'mdid')]}"/>
+                <!-- Campo name para secciones y notas -->
+                <field name="name" x_width="250px" widget="section_and_note_text" />
+              </tree>
+            </field>
+          </page>
+        </notebook>
+      </form>
+    </field>
+  </record>
+
+</odoo>

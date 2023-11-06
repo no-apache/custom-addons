@@ -1,5 +1,11 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_legislativa_grupos_parlamentarios,legislativa.grupos.parlamentarios,legislativa.model_legislativa_grupos_parlamentarios,base.group_user,1,1,1,1
-access_legislativa_diputados,legislativa.diputados,legislativa.model_legislativa_diputados,base.group_user,1,1,1,1
+access_legislativa_entidad_persona,legislativa.entidad.persona,legislativa.model_legislativa_entidad_persona,base.group_user,1,1,1,1
+access_legislativa_actores,legislativa.actores,legislativa.model_legislativa_actores,base.group_user,1,1,1,1
+access_legislativa_tipo_institucion,legislativa.tipo.institucion,legislativa.model_legislativa_tipo_institucion,base.group_user,1,1,1,1
 access_legislativa_iniciativas,legislativa.iniciativas,legislativa.model_legislativa_iniciativas,base.group_user,1,1,1,1
-access_legislativa_instituciones,legislativa.instituciones,legislativa.model_legislativa_instituciones,base.group_user,1,1,1,1
+access_legislativa_mapas,legislativa.mapas,legislativa.model_legislativa_mapas,base.group_user,1,1,1,1
+access_legislativa_tipos_mapas,legislativa.tipos.mapas,legislativa.model_legislativa_tipos_mapas,base.group_user,1,1,1,1
+access_legislativa_areas,legislativa.areas,legislativa.model_legislativa_areas,base.group_user,1,1,1,1
+access_legislativa_sub_areas,legislativa.sub.areas,legislativa.model_legislativa_sub_areas,base.group_user,1,1,1,1
+access_legislativa_dimension,legislativa.dimension,legislativa.model_legislativa_dimension,base.group_user,1,1,1,1
+access_legislativa_desempeno_resultado,legislativa.desempeno.resultado,legislativa.model_legislativa_desempeno_resultado,base.group_user,1,1,1,1

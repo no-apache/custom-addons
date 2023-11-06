@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="legislativa_resultado_list">
+        <field name="name">resultado.list</field>
+        <field name="model">legislativa.desempeno_resultado</field>
+        <field name="arch" type="xml">
+            <tree string="Desempeño (OUTPUTS)" editable="bottom">
+                <field name="area_id" width="200px" required="1" domain="[('aapp_name', '=', 'outcomes')]"/>
+                <field name="sub_area_id" width="200px" domain="[('area_id', '=', area_id)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+                <field name="dimension_id" width="200px" domain="[('sub_area_id', '=', sub_area_id)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+                <field name="activada" width="200px" widget="boolean_toggle"/>
+                <field name="definicion" width="250px"/>
+                <field name="val_planificados" string="Planificados" width="200px"/>
+                <field name="val_realizados" string="Realizados" width="200px"/>
+                <field name="val_alineados" string="Alineados" width="200px"/>
+                <field name="cumplimiento" width="200px"/>
+                <field name="pon_planificados" string="Planificados" width="200px"/>
+                <field name="pon_realizados" string="Realizados" width="200px"/>
+                <field name="pon_alineados" string="Alineados" width="200px"/>
+                <field name="por_sin_ponderar" width="200px" />
+                <field name="ratio_sin_ponderar" width="200px" />
+                <field name="por_ponderado" width="200px" />
+                <field name="ratio_ponderado" width="200px" />
+                <field name="por_sin_ponderar_avr" width="200px" />
+                <field name="ratio_sin_ponderar_avr" width="200px" />
+                <field name="por_ponderado_avr" width="200px" />
+                <field name="ratio_ponderado_avr" width="200px" />
+                <field name="logro" width="200px" />
+                <!-- Campo name para secciones y notas -->
+                <field name="name" width="250px" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

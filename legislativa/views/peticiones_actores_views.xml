@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="mapa_peticiones_actores_list">
+    <field name="name">mapa_peticiones_actores list</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Mapa de Peticiones de Actores" editable="bottom">
+        <field name="actor_id" width="250px" required="1" />
+        <field name="peticiones" width="200px" />
+        <field name="percent" width="125px" widget="percentage" />
+        <field name="relevancia" width="150px"/>
+        <field name="alineamiento" width="150px"/>
+        <field name="activable" width="125px"/>
+        <field name="ponderacion_rel" width="150px"/>
+        <field name="ponderacion_inst" width="200px"/>
+        <field name="ponderacion_fin" width="150px"/>
+        <!-- KPI Mapa de Peticiones de Actores  -->
+        <field name="planificados_peticiones" width="125px" />
+        <field name="realizados_peticiones" width="125px" />
+        <field name="aceptadas_peticiones" width="125px" />
+        <!-- Campo name para secciones y notas -->
+        <field name="name" width="250px" />
+      </tree>
+    </field>
+  </record>
+
+</odoo>

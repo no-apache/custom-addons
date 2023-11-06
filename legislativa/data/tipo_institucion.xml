@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="tipo_institucion_0" model="legislativa.tipo_institucion">
+            <field name="name">Instituciones del Estado</field>
+        </record>
+        <record id="tipo_institucion_1" model="legislativa.tipo_institucion">
+            <field name="name">Instituciones Autonómicas</field>
+        </record>
+        <record id="tipo_institucion_2" model="legislativa.tipo_institucion">
+            <field name="name">Alianzas</field>
+        </record>
+        <record id="tipo_institucion_3" model="legislativa.tipo_institucion">
+            <field name="name">Medios de comunicación</field>
+        </record>
+        <record id="tipo_institucion_4" model="legislativa.tipo_institucion">
+            <field name="name">Influencers online</field>
+        </record>
+        <record id="tipo_institucion_5" model="legislativa.tipo_institucion">
+            <field name="name">Otros</field>
+        </record>
+    </data>
+</odoo>

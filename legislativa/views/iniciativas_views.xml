@@ -1,52 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
+  <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="iniciativas_list">
-      <field name="name">iniciativas list</field>
-      <field name="model">legislativa.iniciativas</field>
-      <field name="arch" type="xml">
-        <tree string="Lista de Iniciativas">
-          <field name="num_expediente" optional="show"/>
-          <field name="name" modifiers="{&quot;required&quot;: true}"/>
-          <field name="autor" optional="show"/>
-        </tree>
-      </field>
-    </record>
+  <record model="ir.ui.view" id="iniciativas_list">
+    <field name="name">iniciativas list</field>
+    <field name="model">legislativa.iniciativas</field>
+    <field name="arch" type="xml">
+      <tree string="Lista de Iniciativas">
+        <field name="num_expediente" optional="show"/>
+        <field name="name" modifiers="{&quot;required&quot;: true}"/>
+        <field name="autor" optional="show"/>
+      </tree>
+    </field>
+  </record>
 
-    <record model="ir.ui.view" id="iniciativas_form">
-      <field name="name">iniciativas form</field>
-      <field name="model">legislativa.iniciativas</field>
-      <field name="arch" type="xml">
-        <form>
-          <sheet string="Iniciativas">
+  <record model="ir.ui.view" id="iniciativas_form">
+    <field name="name">iniciativas form</field>
+    <field name="model">legislativa.iniciativas</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet string="Iniciativas">
+          <group>
             <group>
-              <group>
-                <field name="name" modifiers="{&quot;required&quot;: true}"/>
-                <field name="legislatura"/>
-                <field name="agrupacion"/>
-                <field name="fecha_presentacion"/>
-                <field name="autor"/>
-                <field name="plazos"/>
-                <field name="enlaces_bocg"/>
-              </group>
-              <group>
-                <field name="num_expediente"/>
-                <field name="supertipo"/>
-                <field name="tipo"/>
-                <field name="fecha_calificacion"/>
-                <field name="situacion_actual"/>
-                <field name="tramitacion_seguida"/>
-              </group>
+              <field name="name" modifiers="{&quot;required&quot;: true}"/>
+              <field name="legislatura"/>
+              <field name="agrupacion"/>
+              <field name="fecha_presentacion"/>
+              <field name="autor"/>
+              <field name="plazos"/>
+              <field name="enlaces_bocg"/>
             </group>
             <group>
-              <separator/>
+              <field name="num_expediente"/>
+              <field name="supertipo"/>
+              <field name="tipo"/>
+              <field name="fecha_calificacion"/>
+              <field name="situacion_actual"/>
+              <field name="tramitacion_seguida"/>
             </group>
-          </sheet>
-        </form>
-      </field>
-    </record>
+          </group>
+          <group>
+            <separator/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
 
-  </data>
 </odoo>

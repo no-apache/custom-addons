@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- explicit list view definition -->
+
+  <record model="ir.ui.view" id="mapa_infl_digi_list">
+    <field name="name">mapa_influ_digi list</field>
+    <field name="model">legislativa.tipos_mapas</field>
+    <field name="arch" type="xml">
+      <tree string="Mapa de Influencia Digital" editable="bottom">
+        <field name="actor_id" width="250px" required="1" />
+        <field name="entidad_id" width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', True)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="persona_id" width="200px" domain="[('actor_id', '=', actor_id),('es_entidad', '=', False)]" options="{'no_create': True, 'no_edit':True, 'no_open':True}" />
+        <field name="relevancia" width="150px"/>
+        <field name="alineamiento" width="150px"/>
+        <field name="activable" width="125px"/>
+        <field name="ponderacion_rel" width="150px"/>
+        <field name="ponderacion_inst" width="200px"/>
+        <field name="ponderacion_fin" width="150px"/>
+        <!-- KPI Mapa de Influencia Digital -->
+        <field name="plan_plan_influencers" width="125px" />
+        <field name="real_plan_influencers" width="125px" />
+        <field name="alin_plan_influencers" width="125px" />
+        <field name="plan_plan_medon" width="125px" />
+        <field name="real_plan_medon" width="125px" />
+        <field name="alin_plan_medon" width="125px" />
+        <field name="plan_comunic_imo" width="125px" />
+        <field name="real_comunic_imo" width="125px" />
+        <field name="alin_comunic_imo" width="125px" />
+        <!-- Campo name para secciones y notas -->
+        <field name="name" width="250px" />
+      </tree>
+    </field>
+  </record>
+
+</odoo>

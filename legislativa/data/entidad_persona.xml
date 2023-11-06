@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="grupo_parlamentario_1" model="legislativa.entidad_persona">
+            <field name="name">PP</field>
+            <field name="nombre">Grupo Parlamentario Popular en el Congreso</field>
+            <field name="escanios">136</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_2" model="legislativa.entidad_persona">
+            <field name="name">PSOE</field>
+            <field name="nombre">Grupo Parlamentario Socialista</field>
+            <field name="escanios">124</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_3" model="legislativa.entidad_persona">
+            <field name="name">VOX</field>
+            <field name="nombre">Grupo Parlamentario VOX</field>
+            <field name="escanios">33</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_4" model="legislativa.entidad_persona">
+            <field name="name">SUMAR</field>
+            <field name="nombre">Grupo Parlamentario Plurinacional SUMAR</field>
+            <field name="escanios">31</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_5" model="legislativa.entidad_persona">
+            <field name="name">ERC</field>
+            <field name="nombre">Grupo Parlamentario Republicano</field>
+            <field name="escanios">7</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_6" model="legislativa.entidad_persona">
+            <field name="name">JxCAT</field>
+            <field name="nombre">Grupo Parlamentario Junts per Catalunya</field>
+            <field name="escanios">7</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_7" model="legislativa.entidad_persona">
+            <field name="name">EH BILDU</field>
+            <field name="nombre">Grupo Parlamentario Euskal Herria Bildu</field>
+            <field name="escanios">6</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_8" model="legislativa.entidad_persona">
+            <field name="name">EAJ-PNV</field>
+            <field name="nombre">Grupo Parlamentario Vasco (EAJ-PNV)</field>
+            <field name="escanios">5</field>
+            <field name="actor_id">2</field>
+        </record>
+        <record id="grupo_parlamentario_9" model="legislativa.entidad_persona">
+            <field name="name">UPN</field>
+            <field name="nombre">Grupo Parlamentario Mixto</field>
+            <field name="escanios">3</field>
+            <field name="actor_id">2</field>
+        </record>
+    </data>
+</odoo>

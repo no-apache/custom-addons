@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="actores_1" model="legislativa.actores">
+            <field name="name">Casa de Su Majestad El Rey</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_2" model="legislativa.actores">
+            <field name="name">Congreso de los Diputados</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">True</field>
+            <field name="legislatura">XV Legislatura</field>
+        </record>
+        <record id="actores_3" model="legislativa.actores">
+            <field name="name">Senado</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">True</field>
+            <field name="legislatura">Demo</field>
+        </record>
+        <record id="actores_4" model="legislativa.actores">
+            <field name="name">Tribunal Constitucional</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_5" model="legislativa.actores">
+            <field name="name">Poder Judicial</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_6" model="legislativa.actores">
+            <field name="name">Consejo de Estado</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_7" model="legislativa.actores">
+            <field name="name">Defensor del Pueblo</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_8" model="legislativa.actores">
+            <field name="name">Tribunal de Cuentas</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_9" model="legislativa.actores">
+            <field name="name">Gobiernos Regionales</field>
+            <field name="tipo">2</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_10" model="legislativa.actores">
+            <field name="name">Consejo Económico y Social</field>
+            <field name="tipo">1</field>
+            <field name="es_legislativa">False</field>
+        </record>
+        <record id="actores_11" model="legislativa.actores">
+            <field name="name">Alianzas/Influenciadores normativos</field>
+            <field name="tipo">3</field>
+            <field name="es_legislativa">False</field>
+        </record>
+    </data>
+</odoo>
